@@ -5,9 +5,7 @@ function loadNotes() {
   // Get note array as JSON-string
   let notes = localStorage.getItem("saved-notes");
 
-  console.log(notes)
-
-  if(notes == undefined) {
+  if(notes == undefined || notes.toString() == "[]") {
     noteDiv.innerHTML = "<h3>No notes were found<h3>"
     return;
   }
@@ -18,10 +16,10 @@ function loadNotes() {
   // Create an empty string to hold html
   let appendString = "";
 
-  for(let i in notes) {
+  for(let i = notes.length-1; i >= 0; i--) {
     // Create a div with title and text for each note
     const note = notes[i];
-    appendString += `<div class='note'><h3>${note.title}</h3><p>${note.text}</p></div>`;
+    appendString += `<div class='note'><h3>${note.title}</h3><p>${note.text}</p><br><a href="#" onclick="deleteNote(${i})">delete</a></div>`;
   }
 
   // Set the innerhtml of notediv to the appendstring
