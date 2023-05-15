@@ -13,7 +13,7 @@ function save() {
   console.log(notes);
 
   // redifine notes to either an empty array or to saved array
-  notes = notes == undefined ? (notes = []) : (notes = JSON.parse(notes));
+  notes = !notes ? [] : JSON.parse(notes);
 
   //Add note
   notes.push(note);
@@ -22,5 +22,5 @@ function save() {
   localStorage.setItem("saved-notes", JSON.stringify(notes));
 
   // Navigate back to index
-  window.location.href="index.html"
+  window.location.href = "index.html";
 }

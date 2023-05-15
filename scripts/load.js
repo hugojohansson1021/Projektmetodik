@@ -1,36 +1,35 @@
 function loadNotes() {
   // Get note div element
-  const noteDiv = document.getElementById("note-div")
+  const noteDiv = document.getElementById("note-div");
 
   // Get note array as JSON-string
   let notes = localStorage.getItem("saved-notes");
 
-  if(notes == undefined || notes.toString() == "[]") {
-    noteDiv.innerHTML = "<h3>No notes were found<h3>"
+  if (notes == undefined || notes.toString() == "[]") {
+    noteDiv.innerHTML = "<h3>No notes were found<h3>";
     return;
   }
 
-  // Redifine notes as parsed object
+  // Redefine notes as parsed object
   notes = JSON.parse(notes);
 
-  // Create an empty string to hold html
-  let appendString = "";
+  // Initial html string
+  let html = "";
 
-
-  for(let i = notes.length-1; i >= 0; i--) {
+  for (let i = notes.length - 1; i >= 0; i--) {
+    // Add html
+    // NOTE: Reformating this string will break edit function
+    // TODO: Make this safer
     const note = notes[i];
-    appendString += `<div class='note'>
+    html += `<div class="note">
       <h3 contenteditable="true">${note.title}</h3>
       <p contenteditable="true">${note.text}</p><br>
-      <button onclick="saveNote(${i})">Save</button>
-      <a href="#" onclick="deleteNote(${i})">delete</a>
-    </div>`;
+      <button onclick="saveNote(${i}, this.parentElement)">Save</button>
+      <button onclick="deleteNote(${i})">delete</a>
+      </div>`;
   }
-  
 
-  // Set the innerhtml of notediv to the appendstring
-  noteDiv.innerHTML = appendString;
-
+  document.getElementById("note-div").innerHTML = html;
 }
 
 function editNote(index, field, value) {
@@ -45,15 +44,14 @@ function editNote(index, field, value) {
   localStorage.setItem("saved-notes", JSON.stringify(notes));
 }
 
-
-function saveNote(index) {
+function saveNote(index, divElem) {
   // Get notes from localStorage
   let notes = localStorage.getItem("saved-notes");
-  notes = notes == undefined ? [] : JSON.parse(notes);
+  notes = !notes ? [] : JSON.parse(notes);
 
   // Get the updated title and text directly from the note's content in the HTML
-  const updatedTitle = document.querySelectorAll('.note h3')[index].innerText;
-  const updatedText = document.querySelectorAll('.note p')[index].innerText;
+  const updatedTitle = divElem.childNodes[1].innerText;
+  const updatedText = divElem.childNodes[3].innerText;
 
   // Update the note
   notes[index].title = updatedTitle;
@@ -62,9 +60,6 @@ function saveNote(index) {
   // Save notes back to localStorage
   localStorage.setItem("saved-notes", JSON.stringify(notes));
 
-  // Optionally, you can reload the notes to show the updated note
+  // Reload homepage
   loadNotes();
 }
-
-
-
