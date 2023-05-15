@@ -22,9 +22,8 @@ function loadNotes() {
     // TODO: Make this safer
     const note = notes[i];
     html += `<div class="note">
-      <h3 contenteditable="true">${note.title}</h3>
-      <p contenteditable="true">${note.text}</p><br>
-      <button onclick="saveNote(${i}, this.parentElement)">Save</button>
+      <h3 contenteditable="true" oninput="saveNote(${i}, this.parentElement)">${note.title}</h3>
+      <p contenteditable="true" oninput="saveNote(${i}, this.parentElement)">${note.text}</p><br>
       <button onclick="deleteNote(${i})">delete</a>
       </div>`;
   }
@@ -61,5 +60,5 @@ function saveNote(index, divElem) {
   localStorage.setItem("saved-notes", JSON.stringify(notes));
 
   // Reload homepage
-  loadNotes();
+  // loadNotes();
 }
