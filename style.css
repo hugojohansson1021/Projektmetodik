@@ -120,10 +120,15 @@ form input[type="text"],
 form textarea {
   width: 100%;
   padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ddd;
+  font-size: 25px; /* Adjust the font size to your desired value */
+  border: 1px solid #ac5858;
   margin-bottom: 20px;
 }
+
+form textarea {
+  height: 150px; /* Adjust the height to your desired value */
+}
+
 
 form button[type="submit"] {
   background-color: #2e2e2e;
@@ -176,4 +181,6 @@ form button[type="submit"]:hover {
   form button[type="submit"] {
     font-size: 16px;
   }
+
+
 }
