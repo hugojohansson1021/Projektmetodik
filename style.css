@@ -144,6 +144,18 @@ form button[type="submit"]:hover {
 }
 
 
+
+
+/* Regular star */
+.fa-solid   {
+  color: rgb(245, 255, 60);
+  transition: color 0.2s;
+}
+
+
+
+
+
 /* Media queries for mobile devices */
 @media only screen and (max-width: 600px) {
   /* Body Styles */

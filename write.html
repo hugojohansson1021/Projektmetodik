@@ -8,15 +8,27 @@
   </header>
   <body>
     <script src="scripts/save.js"></script>
-    <h1>Write a new note</h1>
+    <script src="scripts/fontChange.js"></script>
+    <h1>New note</h1>
+    
+    <div>Write a new title</div>
     <input type="text" id="title-input" placeholder="title" />
     <br>
 
     
-    <div>mellanrun</div>
+    <div>Write a New text</div>
     <textarea id="text-input" rows="4" cols="50">
     </textarea>
     <br>
+
+
+    <select id="font-select" onchange="changeFont()">
+      <option value="Arial">Arial</option>
+      <option value="Times New Roman">Times New Roman</option>
+      <option value="Courier New">Courier New</option>
+    </select>
+
+
     <button onclick="save()">Submit</button>
   </body>
 </html>
