@@ -13,52 +13,65 @@ function loadNotes() {
   // Redefine notes as parsed object
   notes = JSON.parse(notes);
 
+  // Determin what to do based on dropdown
+  const dropdown = document.getElementById("sortby-dropdown");
+
+  switch (dropdown.value) {
+    case "newest":
+      loadNewest(notes);
+      break;
+    case "favorite":
+      loadFavorites(notes);
+      break;
+    case "oldest":
+      loadOldest(notes);
+      break;
+  }
+}
+
+// Loads newest to oldest
+function loadNewest(notes) {
   // Initial html string
   let html = "";
 
   for (let i = notes.length - 1; i >= 0; i--) {
     // Add html
-    // NOTE: Reformating this string will break edit function
-    // TODO: Make this safer
     const note = notes[i];
-    html += `<div class="note">
-      <h3 contenteditable="true" oninput="saveNote(${i}, this.parentElement)">${note.title}</h3>
-      <p contenteditable="true" oninput="saveNote(${i}, this.parentElement)">${note.text}</p><br>
-      <button onclick="deleteNote(${i})">delete</a>
-      </div>`;
+
+    const favoriteIcon = note.favorite
+      ? "fa-solid fa-star"
+      : "fa-regular fa-star";
+
+    html += getNoteTemplate(i, note, favoriteIcon);
   }
 
   document.getElementById("note-div").innerHTML = html;
 }
 
-function editNote(index, field, value) {
-  // Get notes from localStorage
-  let notes = localStorage.getItem("saved-notes");
-  notes = notes == undefined ? [] : JSON.parse(notes);
+// Loads oldest to newest
+function loadOldest(notes) {
+  // Initial html string
+  let html = "";
 
-  // Update the note
-  notes[index][field] = value;
+  for (let i in notes) {
+    // Add html
+    const note = notes[i];
 
-  // Save notes back to localStorage
-  localStorage.setItem("saved-notes", JSON.stringify(notes));
+    const favoriteIcon = note.favorite
+      ? "fa-solid fa-star"
+      : "fa-regular fa-star";
+
+    html += getNoteTemplate(i, note, favoriteIcon);
+  }
+
+  document.getElementById("note-div").innerHTML = html;
 }
 
-function saveNote(index, divElem) {
-  // Get notes from localStorage
-  let notes = localStorage.getItem("saved-notes");
-  notes = !notes ? [] : JSON.parse(notes);
-
-  // Get the updated title and text directly from the note's content in the HTML
-  const updatedTitle = divElem.childNodes[1].innerText;
-  const updatedText = divElem.childNodes[3].innerText;
-
-  // Update the note
-  notes[index].title = updatedTitle;
-  notes[index].text = updatedText;
-
-  // Save notes back to localStorage
-  localStorage.setItem("saved-notes", JSON.stringify(notes));
-
-  // Reload homepage
-  // loadNotes();
+function getNoteTemplate(i, note, favoriteIcon) {
+  return `<div class="note">
+      <h3 contenteditable="true" oninput="saveNote(${i}, this.parentElement)">${note.title}</h3>
+      <p contenteditable="true" oninput="saveNote(${i}, this.parentElement)">${note.text}</p><br>
+      <a onclick="deleteNote(${i})"><i class="fa-regular fa-trash-can"></i></a>
+      <a onclick="toggleFavorite(${i})"><i class="${favoriteIcon}"></i></a>
+      </div>`;
 }
