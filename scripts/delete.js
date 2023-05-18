@@ -1,7 +1,7 @@
 function deleteNote(index) {
   // Get array
   let notes = localStorage.getItem("saved-notes");
-  if(notes == undefined) return;
+  if (notes == undefined) return;
 
   notes = JSON.parse(notes);
 
@@ -10,5 +10,8 @@ function deleteNote(index) {
 
   // Save array and redirect
   localStorage.setItem("saved-notes", JSON.stringify(notes));
-  window.location.href = "index.html"
+
+  // Reload notes
+  loadNotes();
 }
+
