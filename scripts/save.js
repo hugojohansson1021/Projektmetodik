@@ -5,7 +5,7 @@ function save() {
   const text = document.querySelector("#text-input").value;
 
   // Create note object
-  const note = { title: title, text: text };
+  const note = { title: title, text: text, favorite: false };
 
   // Get notes from localStorage
   let notes = localStorage.getItem("saved-notes");

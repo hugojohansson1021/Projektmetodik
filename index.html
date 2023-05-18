@@ -5,10 +5,14 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <title>Quire - notebook</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="scripts/deleteFirstNote.js"></script>
+    <script
+      src="https://kit.fontawesome.com/e85a2e2dbb.js"
+      crossorigin="anonymous"
+    ></script>
   </header>
   <body onload="loadNotes()">
     <script src="scripts/delete.js"></script>
+    <script src="scripts/favorite.js"></script>
     <script src="scripts/load.js"></script>
     <h1>Quire - notebook</h1>
     <p>welcome user</p>
@@ -16,8 +20,12 @@
     <button onclick="window.location.href='clearAll.html'">
       Clear all notes
     </button>
-    <!-- <button onclick="window.location.href='delete.html'">Delete last note</button> -->
-
+    <select name="cars" id="cars">
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="mercedes">Mercedes</option>
+      <option value="audi">Audi</option>
+    </select>
     <div id="note-div"></div>
   </body>
 </html>

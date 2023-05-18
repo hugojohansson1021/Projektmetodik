@@ -21,10 +21,18 @@ function loadNotes() {
     // NOTE: Reformating this string will break edit function
     // TODO: Make this safer
     const note = notes[i];
+    console.log(note)
+
+    const favoriteIcon = note.favorite
+      ? "fa-solid fa-star"
+      : "fa-regular fa-star";
+
+    console.log(favoriteIcon)
     html += `<div class="note">
       <h3 contenteditable="true" oninput="saveNote(${i}, this.parentElement)">${note.title}</h3>
       <p contenteditable="true" oninput="saveNote(${i}, this.parentElement)">${note.text}</p><br>
-      <button onclick="deleteNote(${i})">delete</a>
+      <a onclick="deleteNote(${i})"><i class="fa-regular fa-trash-can"></i></a>
+      <a onclick="toggleFavorite(${i})"><i class="${favoriteIcon}"></i></a>
       </div>`;
   }
 
@@ -58,7 +66,4 @@ function saveNote(index, divElem) {
 
   // Save notes back to localStorage
   localStorage.setItem("saved-notes", JSON.stringify(notes));
-
-  // Reload homepage
-  // loadNotes();
 }
