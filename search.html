@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>Quire - search for a note</title>
+    <link rel="stylesheet" href="writestyles.css" />
+  </header>
+  <body>
+    <script src="scripts/search.js"></script>
+    <script src="scripts/fontChange.js"></script>
+    <h1>Search for a note</h1>
+    
+    <div>Enter any charactars from wantedTitle here, please?</div>
+    <input type="text" id="titleSearch" placeholder="wantedTitle" />
+    <br>
+
+    
+    <div>Enter any charactars from wantedText here, please?</div>
+    <input type="text" id="textSearch" placedholder="wantedText" />
+    <br>
+
+    <div>Enter any charactars from wantedDateText here, please?</div>
+    <input type="text" id="dateSearch" placeholder="wantedDateText" />
+    <br>
+
+    <button onclick="search()">Search</button>
+    <div id="desired-note-div"></div>
+  </body>
+</html>
