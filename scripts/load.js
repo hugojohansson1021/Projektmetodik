@@ -69,8 +69,8 @@ function loadOldest(notes) {
 
 function getNoteTemplate(i, note, favoriteIcon) {
   return `<div class="note">
-      <h3 contenteditable="true" oninput="saveNote(${i}, this.parentElement)">${note.title}</h3>
-      <p contenteditable="true" oninput="saveNote(${i}, this.parentElement)">${note.text}</p><br>
+      <h3 contenteditable="true" style="font-family: ${note.fontFamily}" oninput="saveNote(${i}, this.parentElement)">${note.title}</h3>
+      <p contenteditable="true" style="font-family: ${note.fontFamily}" oninput="saveNote(${i}, this.parentElement)">${note.text}</p><br>
       <p>${note.creationDate}</p><br />
       <a onclick="deleteNote(${i})"><i class="fa-regular fa-trash-can"></i></a>
       <a onclick="toggleFavorite(${i})"><i class="${favoriteIcon}"></i></a>

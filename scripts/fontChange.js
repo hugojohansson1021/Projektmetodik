@@ -1,8 +1,16 @@
-
 function changeFont() {
-    var fontSelect = document.getElementById("font-select");
-    var selectedFont = fontSelect.value;
-    var textArea = document.getElementById("text-input");
-    textArea.style.fontFamily = selectedFont;
-    localStorage.setItem("selectedFont", selectedFont); // Save selected font to localStorage
-  }
+  // Get selected font
+  const fontSelect = document.getElementById("font-select");
+  const selectedFont = fontSelect.value;
+
+  // Grab inputs
+  const textArea = document.getElementById("text-input");
+  const titleInput = document.getElementById("title-input");
+
+  // Change their font
+  textArea.style.fontFamily = selectedFont;
+  titleInput.style.fontFamily = selectedFont;
+
+  localStorage.setItem("selectedFont", selectedFont); // Save selected font to localStorage
+}
+

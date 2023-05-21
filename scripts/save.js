@@ -4,14 +4,12 @@ function save() {
   const title = document.querySelector("#title-input").value;
   const text = document.querySelector("#text-input").value;
 
-  // Date stuff
-  var dateOptions = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
+  // Grab font check for null object
+  const font = !localStorage.getItem("selectedFont")
+    ? "Arial"
+    : localStorage.getItem("selectedFont");
 
+  // Date stuff
   const date = new Date();
   const formatedDate = `${date.getDate()}-${
     date.getMonth() + 1
@@ -23,6 +21,7 @@ function save() {
     text: text,
     favorite: false,
     creationDate: formatedDate,
+    fontFamily: font,
   };
 
   // Get notes from localStorage
