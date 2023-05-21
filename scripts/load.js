@@ -1,4 +1,6 @@
 function loadNotes() {
+  var e = document.getElementById("sortby-dropdown");
+  var selectedOption = e.options[e.selectedIndex].value;
   // Get note div element
   const noteDiv = document.getElementById("note-div");
 
