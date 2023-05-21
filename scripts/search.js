@@ -14,10 +14,6 @@ function search() {
     var wantedText = document.querySelector("#textSearch").value;
     var wantedDateText = document.querySelector("#dateSearch").value;
 
-    console.log("wantedTitle is: ", wantedTitle);
-
-    console.log("HERE notes are: ", notes);
-  
     // Redefine notes as parsed object
     notes = JSON.parse(notes);
     console.log(" BUT here notes became: ", notes);
@@ -30,7 +26,7 @@ function search() {
     
     for(let i in notes) {
         let note = notes[i];
-        if (note.title == wantedTitle) {
+        if (note.title.contains(wantedTitle)) {
             console.log("BINGO");
             console.log("Diserd note is: ", note);
             //desiredDiv.innerHTML="<br />Bingo<br />"+note.toString();

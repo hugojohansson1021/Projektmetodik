@@ -1,6 +1,6 @@
 function clearAll() {
-    // Clear all notes
-    localStorage.clear();
-    window.location.href="index.html"
-  }
-  
+  // Clear all notes
+  localStorage.clear();
+  window.location.href = "index.html";
+}
+

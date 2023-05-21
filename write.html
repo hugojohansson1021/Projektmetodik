@@ -6,28 +6,33 @@
     <title>Quire - write a new note</title>
     <link rel="stylesheet" href="writestyles.css" />
   </header>
-  <body>
+  <body onload="changeFont()">
     <script src="scripts/save.js"></script>
     <script src="scripts/fontChange.js"></script>
+    <script src="scripts/color.js"></script>
     <h1>New note</h1>
-    
+
     <div>Write a new title</div>
     <input type="text" id="title-input" placeholder="title" />
-    <br>
+    <br />
 
-    
     <div>Write a New text</div>
-    <textarea id="text-input" rows="4" cols="50">
-    </textarea>
-    <br>
-
+    <textarea id="text-input" rows="4" cols="50"></textarea>
+    <br />
 
     <select id="font-select" onchange="changeFont()">
       <option value="Arial">Arial</option>
       <option value="Times New Roman">Times New Roman</option>
       <option value="Courier New">Courier New</option>
+      <option value="Verdana">Verdana</option>
+      <option value="Helvetica">Helvetica</option>
     </select>
-
+    <input
+      type="color"
+      id="color-input"
+      value="#ddedf0"
+      onchange="changeColor(this)"
+    />
 
     <button onclick="save()">Submit</button>
   </body>

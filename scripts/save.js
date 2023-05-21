@@ -3,17 +3,25 @@ function save() {
   // Get both inputs from id
   const title = document.querySelector("#title-input").value;
   const text = document.querySelector("#text-input").value;
-  var currentDate = Date();
+
+  // Date stuff
+  const date = new Date();
+  const formatedDate = `${date.getDate()}-${
+    date.getMonth() + 1
+  }-${date.getFullYear()}`;
 
   // Create note object
-  const note = { title: title, text: text, favorite: false, myCurrentDate: currentDate };
+  const note = {
+    title: title,
+    text: text,
+    favorite: false,
+    creationDate: formatedDate,
+    backgroundColor: selectedColor,
+    fontFamily: selectedFont,
+  };
 
   // Get notes from localStorage
   let notes = localStorage.getItem("saved-notes");
-
-  console.log("    note IS: ", note);
-  console.log();
-  console.log(" notes are: ",notes);
 
   // redifine notes to either an empty array or to saved array
   notes = !notes ? [] : JSON.parse(notes);

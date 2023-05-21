@@ -14,4 +14,3 @@ function deleteNote(index) {
   // Reload notes
   loadNotes();
 }
-
