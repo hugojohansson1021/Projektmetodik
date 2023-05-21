@@ -4,11 +4,6 @@ function save() {
   const title = document.querySelector("#title-input").value;
   const text = document.querySelector("#text-input").value;
 
-  // Grab font check for null object
-  const font = !localStorage.getItem("selectedFont")
-    ? "Arial"
-    : localStorage.getItem("selectedFont");
-
   // Date stuff
   const date = new Date();
   const formatedDate = `${date.getDate()}-${
@@ -21,7 +16,8 @@ function save() {
     text: text,
     favorite: false,
     creationDate: formatedDate,
-    fontFamily: font,
+    backgroundColor: selectedColor,
+    fontFamily: selectedFont,
   };
 
   // Get notes from localStorage

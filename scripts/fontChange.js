@@ -1,7 +1,9 @@
+let selectedFont = "Arial";
+
 function changeFont() {
   // Get selected font
   const fontSelect = document.getElementById("font-select");
-  const selectedFont = fontSelect.value;
+  selectedFont = fontSelect.value;
 
   // Grab inputs
   const textArea = document.getElementById("text-input");
@@ -10,7 +12,5 @@ function changeFont() {
   // Change their font
   textArea.style.fontFamily = selectedFont;
   titleInput.style.fontFamily = selectedFont;
-
-  localStorage.setItem("selectedFont", selectedFont); // Save selected font to localStorage
 }
 

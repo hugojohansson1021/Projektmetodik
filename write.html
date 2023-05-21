@@ -9,6 +9,7 @@
   <body onload="changeFont()">
     <script src="scripts/save.js"></script>
     <script src="scripts/fontChange.js"></script>
+    <script src="scripts/color.js"></script>
     <h1>New note</h1>
 
     <div>Write a new title</div>
@@ -26,6 +27,12 @@
       <option value="Verdana">Verdana</option>
       <option value="Helvetica">Helvetica</option>
     </select>
+    <input
+      type="color"
+      id="color-input"
+      value="#ddedf0"
+      onchange="changeColor(this)"
+    />
 
     <button onclick="save()">Submit</button>
   </body>
