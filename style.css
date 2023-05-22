@@ -140,7 +140,7 @@ form button[type="submit"]:hover {
 
 /* Regular star */
 
-.fa-solid:hover {
+.fa-solid {
   color: rgb(252, 186, 63);
   transition: color 0.2s;
 }
