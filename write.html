@@ -4,9 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <title>Quire - write a new note</title>
+    <script
+      src="https://kit.fontawesome.com/e85a2e2dbb.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="writestyles.css" />
   </header>
-  <body onload="changeFont()">
+  <body onload="changeFont(); generateColorSelector(0);">
     <script src="scripts/save.js"></script>
     <script src="scripts/fontChange.js"></script>
     <script src="scripts/color.js"></script>
@@ -18,8 +22,8 @@
 
     <div>Write a New text</div>
     <textarea id="text-input" rows="4" cols="50"></textarea>
-    <br />
-
+    <hr class="sep" />
+    <label>Font: </label>
     <select id="font-select" onchange="changeFont()">
       <option value="Arial">Arial</option>
       <option value="Times New Roman">Times New Roman</option>
@@ -27,13 +31,10 @@
       <option value="Verdana">Verdana</option>
       <option value="Helvetica">Helvetica</option>
     </select>
-    <input
-      type="color"
-      id="color-input"
-      value="#ddedf0"
-      onchange="changeColor(this)"
-    />
-
+    <hr class="sep" />
+    <p>Background color</p>
+    <div id="color-select"></div>
+    <hr class="sep" />
     <button onclick="save()">Submit</button>
   </body>
 </html>
