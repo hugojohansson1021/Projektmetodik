@@ -26,7 +26,7 @@ function search() {
     
     for(let i in notes) {
         let note = notes[i];
-        if (note.title.contains(wantedTitle)) {
+        if (note.title.includes(wantedTitle)) {
             console.log("BINGO");
             console.log("Diserd note is: ", note);
             //desiredDiv.innerHTML="<br />Bingo<br />"+note.toString();
