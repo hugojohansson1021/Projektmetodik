@@ -8,7 +8,7 @@ function save() {
   const date = new Date();
   const formatedDate = `${date.getDate()}-${
     date.getMonth() + 1
-  }-${date.getFullYear()}`;
+  }-${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
 
   // Create note object
   const note = {
