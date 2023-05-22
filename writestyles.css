@@ -51,6 +51,36 @@ div {
   font-size: 20px;
 }
 
+/* Seperator styling */
+.sep {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: transparent;
+}
+
+/* Color select styling */
+#color-select {
+  display: flex;
+  flex-direction: row;
+}
+
+.color-selector {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.3);
+  transition: 0.2s all;
+}
+
+.color-selector:hover {
+  opacity: 0.5;
+}
+
 /* Responsive styles */
 @media screen and (max-width: 600px) {
   h1 {

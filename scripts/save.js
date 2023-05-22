@@ -8,7 +8,7 @@ function save() {
   const date = new Date();
   const formatedDate = `${date.getDate()}-${
     date.getMonth() + 1
-  }-${date.getFullYear()}`;
+  }-${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
 
   // Create note object
   const note = {
@@ -16,7 +16,7 @@ function save() {
     text: text,
     favorite: false,
     creationDate: formatedDate,
-    backgroundColor: selectedColor,
+    backgroundColor: COLOR_VALUES[selectedColor],
     fontFamily: selectedFont,
   };
 
