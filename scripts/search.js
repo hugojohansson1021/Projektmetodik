@@ -1,39 +1,36 @@
 // Search for a note
 function search() {
-    // Get desired div element
-    const desiredDiv = document.getElementById("desired-note-div");
-  
-    // Get note array as JSON-string
-    let notes = localStorage.getItem("saved-notes");
-  
-    if (notes == undefined || notes.toString() == "[]") {
-      noteDiv.innerHTML = "<h1> Here: no notes were found in localStorage</h1>";
-      return;
-    }
-    var wantedTitle = document.querySelector("#titleSearch").value;
-    var wantedText = document.querySelector("#textSearch").value;
-    var wantedDateText = document.querySelector("#dateSearch").value;
+  // Get desired div element
+  const desiredDiv = document.getElementById("desired-note-div");
 
-    // Redefine notes as parsed object
-    notes = JSON.parse(notes);
-    console.log(" BUT here notes became: ", notes);
+  // Get note array as JSON-string
+  let notes = localStorage.getItem("saved-notes");
 
-    // Create an empty string to hold html
-    let appendString = "";
-
-    // TODO : Search by wantedText
-    // TODO : Search by wantedDate
-    
-    for(let i in notes) {
-        let note = notes[i];
-        if (note.title.includes(wantedTitle)) {
-            console.log("BINGO");
-            console.log("Diserd note is: ", note);
-            //desiredDiv.innerHTML="<br />Bingo<br />"+note.toString();
-            appendString += `<div class='desired-searched-note'><h3>${note.title}</h3><p>${note.text}</p></div>`;
-            // Set the innerhtml of notediv to the appendstring
-             desiredDiv.innerHTML = appendString;
-        }
-    }
-  
+  // Look if note array is empty
+  if (notes == undefined || notes.toString() == "[]") {
+    noteDiv.innerHTML = "<h1>No notes exist</h1>";
+    return;
   }
+
+  const searchQuery = document.querySelector("#searchInput").value;
+
+  // Redefine notes as parsed object
+  notes = JSON.parse(notes);
+
+  // Create an empty string to hold html
+  let appendString = "";
+
+  for (let i in notes) {
+    let note = notes[i];
+    if (
+      note.title.includes(searchQuery) ||
+      note.text.includes(searchQuery) ||
+      note.creationDate.includes(searchQuery)
+    ) {
+      appendString += `<div class='desired-searched-note'><h3>${note.title}</h3><p>${note.text}</p><p>${note.creationDate}</p></div>`;
+    }
+  }
+
+  // Append html to div element
+  desiredDiv.innerHTML = appendString;
+}
