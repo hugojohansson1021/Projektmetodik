@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <header>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <title>Quire - notebook</title>
@@ -9,29 +9,29 @@
       src="https://kit.fontawesome.com/e85a2e2dbb.js"
       crossorigin="anonymous"
     ></script>
-  </header>
-  <body
-    onload="document.body.querySelector('#sortby-dropdown').value = 'newest'; loadNotes();"
-  >
-    <script src="scripts/delete.js"></script>
-    <script src="scripts/edit.js"></script>
-    <script src="scripts/favorite.js"></script>
-    <script src="scripts/load.js"></script>
+  </head>
+  <body onload="document.body.querySelector('#sortby-dropdown').value = 'newest'; loadNotes();">
     <h1>Quire notebook</h1>
-    <p>Capture, Organize, Succeed!</p>
-    <button onclick="window.location.href='write.html'">Add a note</button>
-    <button onclick="window.location.href='clearAll.html'">
-      Clear all notes
-    </button>
+    <p class="digitalPostitNotes" >Digital Post-it Notes</p>
+    <button class="rounded-button" onclick="window.location.href='write.html'">Add a note</button>
+    <button class="rounded-button" onclick="window.location.href='clearAll.html'">Clear all notes</button>
+    <button class="rounded-button" onclick="window.location.href='search.html'">Search for a note</button>
+    <br> <!-- Add a line break here -->
     <label>Sort by: </label>
     <select name="Sort by" id="sortby-dropdown" onchange="loadNotes()">
       <option value="newest">Newest first</option>
       <option value="favorite">Favorite</option>
       <option value="oldest">Oldest first</option>
-    </select>    
-    <button onclick="window.location.href='search.html'">
-      Search for a note
-    </button>
+    </select>   
+    <br> 
+    <div>
+
+    </div>
     <div id="note-div"></div>
+    <script src="scripts/delete.js"></script>
+    <script src="scripts/edit.js"></script>
+    <script src="scripts/favorite.js"></script>
+    <script src="scripts/load.js"></script>
+    <br>
   </body>
 </html>

@@ -74,7 +74,10 @@ function getNoteTemplate(i, note, favoriteIcon) {
       <h3 contenteditable="true" style="font-family: ${note.fontFamily}" oninput="saveNote(${i}, this.parentElement)">${note.title}</h3>
       <p contenteditable="true" style="font-family: ${note.fontFamily}" oninput="saveNote(${i}, this.parentElement)">${note.text}</p><br>
       <p class="date">${note.creationDate}</p><br />
-      <a onclick="deleteNote(${i})"><i class="fa-regular fa-trash-can"></i></a>
-      <a onclick="toggleFavorite(${i})"><i class="${favoriteIcon}"></i></a>
+
+
+      <a class= "trash-icon" onclick="deleteNote(${i})"><i class="fa-regular fa-trash-can"></i></a>
+
+      <a class = "star-icon" onclick="toggleFavorite(${i})"><i class="${favoriteIcon}"></i></a>
       </div>`;
 }
