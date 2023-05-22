@@ -28,7 +28,7 @@ textarea {
 }
 
 button {
-  background-color: #4caf50;
+  background-color: #000000;
   color: white;
   padding: 14px 24px; /* Increase the padding for buttons */
   font-size: 18px; /* Increase the font size for buttons */
@@ -38,7 +38,7 @@ button {
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #666a66;
 }
 
 /* Increase the font size for font chooser */
