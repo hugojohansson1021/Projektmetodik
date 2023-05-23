@@ -87,3 +87,12 @@ function getNoteTemplate(i, note, favoriteIcon) {
     </div>
       </div>`;
 }
+
+function getResultNoteTemplate(i, note) {
+  const bgColor = COLOR_VALUES[note.backgroundColor];
+  return `<div class="note" style="background-color: ${bgColor}">
+      <h3 contenteditable="false" style="font-family: ${note.fontFamily}" oninput="saveNote(${i}, this.parentElement)">${note.title}</h3>
+      <p contenteditable="false" style="font-family: ${note.fontFamily}" oninput="saveNote(${i}, this.parentElement)">${note.text}</p><br>
+      <p class="date">${note.creationDate}</p><br />
+      </div>`;
+}

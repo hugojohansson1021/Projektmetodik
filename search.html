@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <header>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <title>Quire - search for a note</title>
-    <link rel="stylesheet" href="writestyles.css" />
-  </header>
-  <body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="getSearchResult()">
     <script src="scripts/search.js"></script>
     <script src="scripts/fontChange.js"></script>
-    <h1>Search for a note</h1>
-
-    <div>Enter a phrase or a date</div>
-    <input type="text" id="searchInput" placeholder="Search for a note" />
+    <h1>Results found</h1>
     <br />
-
-    <button onclick="search()">Search</button>
     <div id="desired-note-div"></div>
+    <button
+      class="rounded-button"
+      onclick="window.location.href = 'index.html'"
+    >
+      Go back
+    </button>
   </body>
 </html>

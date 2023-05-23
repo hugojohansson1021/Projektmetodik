@@ -1,8 +1,5 @@
 // Search for a note
-function search() {
-  // Get desired div element
-  const desiredDiv = document.getElementById("desired-note-div");
-
+function prepare_search() {
   // Get note array as JSON-string
   let notes = localStorage.getItem("saved-notes");
 
@@ -12,7 +9,7 @@ function search() {
     return;
   }
 
-  const searchQuery = document.querySelector("#searchInput").value;
+  const searchQuery = document.querySelector("#search-input").value;
 
   // Redefine notes as parsed object
   notes = JSON.parse(notes);
@@ -27,10 +24,34 @@ function search() {
       note.text.includes(searchQuery) ||
       note.creationDate.includes(searchQuery)
     ) {
-      appendString += `<div class='desired-searched-note'><h3>${note.title}</h3><p>${note.text}</p><p>${note.creationDate}</p></div>`;
+      appendString += getResultNoteTemplate(i, note);
     }
   }
 
-  // Append html to div element
-  desiredDiv.innerHTML = appendString;
+  if (appendString == "") {
+    const input = document.getElementById("search-input");
+    const button = document.getElementById("search-button");
+
+    input.style.border = "1px solid #fe5656";
+    button.style.border = "1px solid #fe5656";
+
+    return;
+  }
+
+  localStorage.setItem("search-result", appendString);
+  window.location.href = "search.html";
+}
+
+function getSearchResult() {
+  const result = localStorage.getItem("search-result");
+
+  console.log(result);
+
+  if (!result) window.location.href = "index.html";
+
+  // Get desired div element
+  const desiredDiv = document.getElementById("desired-note-div");
+
+  // append the string
+  desiredDiv.innerHTML = result;
 }
