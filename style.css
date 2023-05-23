@@ -74,6 +74,8 @@ button:hover {
   background-color: #555;
 }
 
+/* note styling */
+
 .note {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -96,6 +98,25 @@ button:hover {
   margin-bottom: 0;
   font-size: 16px;
   line-height: 1.5;
+}
+
+.icon-div {
+  margin: 10px;
+}
+
+/* Select and label styling */
+
+select {
+  padding: 10px;
+  font-size: 16px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 16px;
 }
 
 /* Date styling */
@@ -228,6 +249,13 @@ select {
     font-size: 24px;
   }
 
+  .digitalPostitNotes {
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.7;
+  }
+
   p {
     font-size: 14px;
   }
@@ -259,6 +287,6 @@ select {
   /* Search bar styling */
 
   .search-bar {
-    width: 80%;
+    width: 90%;
   }
 }
