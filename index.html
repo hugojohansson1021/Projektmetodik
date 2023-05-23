@@ -25,9 +25,14 @@
       Clear all notes
     </button>
     <br />
-    <button class="rounded-button" onclick="window.location.href='search.html'">
-      Search for a note
-    </button>
+    <div class="search-bar-container">
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search for a note" />
+        <button type="submit" id="search-button" onclick="prepare_search()">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
     <!-- Add a line break here -->
     <label>Sort by: </label>
     <select name="Sort by" id="sortby-dropdown" onchange="loadNotes()">
@@ -40,6 +45,7 @@
     <div></div>
     <div id="note-div"></div>
     <script src="scripts/util.js"></script>
+    <script src="scripts/search.js"></script>
     <script src="scripts/delete.js"></script>
     <script src="scripts/color.js"></script>
     <script src="scripts/edit.js"></script>

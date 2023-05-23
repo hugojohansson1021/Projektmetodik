@@ -74,9 +74,12 @@ button:hover {
   background-color: #555;
 }
 
+/* note styling */
+
 .note {
   background-color: #fff;
   border: 1px solid #ddd;
+  border-radius: 4px;
   padding: 10px;
   margin: 20px;
   flex: 0 0 25%;
@@ -97,6 +100,25 @@ button:hover {
   line-height: 1.5;
 }
 
+.icon-div {
+  margin: 10px;
+}
+
+/* Select and label styling */
+
+select {
+  padding: 10px;
+  font-size: 16px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 16px;
+}
+
 /* Date styling */
 .date {
   color: rgba(0, 0, 0, 0.5);
@@ -115,6 +137,37 @@ form label {
   display: block;
   margin-bottom: 10px;
   font-size: 18px;
+}
+
+/* Search bar style */
+.search-bar-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar {
+  width: 30%;
+  display: flex;
+  align-items: baseline;
+}
+
+.search-bar button {
+  height: 55px;
+  border: 1px solid #ccc;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.search-bar input[type="text"] {
+  width: 100%;
+  height: 25px;
+  padding: 14px; /* Increase the padding for text inputs */
+  font-size: 18px; /* Increase the font size for text inputs */
+  border: 1px solid #ccc;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  resize: vertical;
 }
 
 form input[type="text"],
@@ -196,6 +249,13 @@ select {
     font-size: 24px;
   }
 
+  .digitalPostitNotes {
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.7;
+  }
+
   p {
     font-size: 14px;
   }
@@ -222,5 +282,11 @@ select {
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+
+  /* Search bar styling */
+
+  .search-bar {
+    width: 90%;
   }
 }

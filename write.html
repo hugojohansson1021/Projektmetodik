@@ -16,12 +16,15 @@
     <script src="scripts/color.js"></script>
     <h1>New note</h1>
 
-    <div>Write a new title</div>
     <input type="text" id="title-input" placeholder="title" />
-    <br />
+    <hr class="sep" />
 
-    <div>Write a New text</div>
-    <textarea id="text-input" rows="4" cols="50"></textarea>
+    <textarea
+      placeholder="note content"
+      id="text-input"
+      rows="4"
+      cols="50"
+    ></textarea>
     <hr class="sep" />
     <label>Font: </label>
     <select id="font-select" onchange="changeFont()">
@@ -32,7 +35,8 @@
       <option value="Helvetica">Helvetica</option>
     </select>
     <hr class="sep" />
-    <p>Background color</p>
+    <label>Background color</label>
+    <br></br>
     <div id="color-select"></div>
     <hr class="sep" />
     <button onclick="save()">Submit</button>
