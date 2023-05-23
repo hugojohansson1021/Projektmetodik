@@ -2,6 +2,7 @@
 body {
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 /* Apply mobile-friendly styles */
@@ -19,7 +20,7 @@ h1 {
 
 input[type="text"],
 textarea {
-  width: 100%;
+  width: 80%;
   padding: 14px; /* Increase the padding for text inputs */
   font-size: 18px; /* Increase the font size for text inputs */
   border: 1px solid #ccc;
@@ -62,6 +63,7 @@ div {
 #color-select {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .color-selector {
@@ -91,6 +93,7 @@ div {
   textarea {
     padding: 12px;
     font-size: 16px;
+    width: 95%;
   }
 
   button {
@@ -117,6 +120,7 @@ div {
   textarea {
     padding: 10px;
     font-size: 14px;
+    width: 95%;
   }
 
   button {

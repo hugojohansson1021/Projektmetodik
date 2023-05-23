@@ -10,28 +10,40 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body onload="document.body.querySelector('#sortby-dropdown').value = 'newest'; loadNotes();">
+  <body
+    onload="document.body.querySelector('#sortby-dropdown').value = 'newest'; loadNotes();"
+  >
     <h1>Quire notebook</h1>
-    <p class="digitalPostitNotes" >Digital Post-it Notes</p>
-    <button class="rounded-button" onclick="window.location.href='write.html'">Add a note</button>
-    <button class="rounded-button" onclick="window.location.href='clearAll.html'">Clear all notes</button>
-    <button class="rounded-button" onclick="window.location.href='search.html'">Search for a note</button>
-    <br> <!-- Add a line break here -->
+    <p class="digitalPostitNotes">Digital Post-it Notes</p>
+    <button class="rounded-button" onclick="window.location.href='write.html'">
+      Add a note
+    </button>
+    <button
+      class="rounded-button"
+      onclick="window.location.href='clearAll.html'"
+    >
+      Clear all notes
+    </button>
+    <br />
+    <button class="rounded-button" onclick="window.location.href='search.html'">
+      Search for a note
+    </button>
+    <!-- Add a line break here -->
     <label>Sort by: </label>
     <select name="Sort by" id="sortby-dropdown" onchange="loadNotes()">
       <option value="newest">Newest first</option>
       <option value="favorite">Favorite</option>
       <option value="oldest">Oldest first</option>
-    </select>   
-    <br> 
-    <div>
-
-    </div>
+    </select>
+    <br />
+    <div></div>
     <div id="note-div"></div>
+    <script src="scripts/util.js"></script>
     <script src="scripts/delete.js"></script>
     <script src="scripts/edit.js"></script>
     <script src="scripts/favorite.js"></script>
     <script src="scripts/load.js"></script>
-    <br>
+    <br />
   </body>
 </html>
+
