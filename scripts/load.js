@@ -76,8 +76,10 @@ function getNoteTemplate(i, note, favoriteIcon) {
       <p class="date">${note.creationDate}</p><br />
 
 
+    <div class="icon-div">
       <a class= "trash-icon" onclick="deleteNote(${i})"><i class="fa-regular fa-trash-can"></i></a>
 
       <a class = "star-icon" onclick="toggleFavorite(${i})"><i class="${favoriteIcon}"></i></a>
+    </div>
       </div>`;
 }
