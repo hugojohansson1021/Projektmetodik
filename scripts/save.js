@@ -16,7 +16,7 @@ function save() {
     text: text,
     favorite: false,
     creationDate: formatedDate,
-    backgroundColor: COLOR_VALUES[selectedColor],
+    backgroundColor: selectedColor,
     fontFamily: selectedFont,
   };
 

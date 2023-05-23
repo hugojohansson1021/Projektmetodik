@@ -28,6 +28,9 @@ function loadNotes() {
     case "oldest":
       loadOldest(notes);
       break;
+    case "color":
+      loadByColor(notes);
+      break;
   }
 }
 
@@ -70,7 +73,8 @@ function loadOldest(notes) {
 }
 
 function getNoteTemplate(i, note, favoriteIcon) {
-  return `<div class="note" style="background-color: ${note.backgroundColor}">
+  const bgColor = COLOR_VALUES[note.backgroundColor];
+  return `<div class="note" style="background-color: ${bgColor}">
       <h3 contenteditable="true" style="font-family: ${note.fontFamily}" oninput="saveNote(${i}, this.parentElement)">${note.title}</h3>
       <p contenteditable="true" style="font-family: ${note.fontFamily}" oninput="saveNote(${i}, this.parentElement)">${note.text}</p><br>
       <p class="date">${note.creationDate}</p><br />
