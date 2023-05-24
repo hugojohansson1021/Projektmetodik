@@ -9,7 +9,10 @@ function prepare_search() {
     return;
   }
 
-  const searchQuery = document.querySelector("#search-input").value;
+  const searchQuery = document
+    .querySelector("#search-input")
+    .value.toString()
+    .toLowerCase();
 
   // Redefine notes as parsed object
   notes = JSON.parse(notes);
@@ -20,9 +23,9 @@ function prepare_search() {
   for (let i in notes) {
     let note = notes[i];
     if (
-      note.title.includes(searchQuery) ||
-      note.text.includes(searchQuery) ||
-      note.creationDate.includes(searchQuery)
+      note.title.toLowerCase().includes(searchQuery) ||
+      note.text.toLowerCase().includes(searchQuery) ||
+      note.creationDate.toLowerCase().includes(searchQuery)
     ) {
       appendString += getResultNoteTemplate(i, note);
     }
